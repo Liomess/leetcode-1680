@@ -1,0 +1,14 @@
+class Solution:
+    def concatenatedBinary(self, n: int) -> int:
+        s=""
+        for i in range(n):
+            num=i+1
+            brep=bin(num)
+            brep=brep[2:]
+            s+=brep
+        num=0
+        ss=s[::-1]
+        for i in range(len(ss)):
+            if ss[i]=="1":
+                num+=(2**i)
+        return num%((10**9)+7)
